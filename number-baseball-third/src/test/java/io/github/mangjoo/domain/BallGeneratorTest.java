@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class MakeRandomBallTest {
+class BallGeneratorTest {
     @Test
     void 생성_테스트() {
         //given
-        assertDoesNotThrow(() -> new MakeRandomBall());
+        assertDoesNotThrow(BallGenerator::new);
 
     }
 
@@ -18,10 +18,10 @@ class MakeRandomBallTest {
     @DisplayName("랜덤 볼 생성 테스트")
     void makeRandomBall() {
         //given
-        MakeRandomBall makeRandomBall = new MakeRandomBall();
+        BallGenerator ballGenerator = new BallGenerator();
 
         //when
-        int[] arrayNumbers = makeRandomBall.makeRandom();
+        int[] arrayNumbers = ballGenerator.makeRandom();
 
         //then
         assertEquals(arrayNumbers.length, 3);
