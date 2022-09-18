@@ -28,5 +28,4 @@ public class BallTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("숫자는 1~9까지만 사용할 수 있습니다.");
     }
-
 }
