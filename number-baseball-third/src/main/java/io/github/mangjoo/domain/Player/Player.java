@@ -1,7 +1,7 @@
 package io.github.mangjoo.domain.Player;
 
+import io.github.mangjoo.domain.BallGenerator;
 import io.github.mangjoo.domain.Balls;
-import io.github.mangjoo.domain.MakeRandomBall;
 
 import java.util.Arrays;
 
@@ -17,8 +17,8 @@ public interface Player {
         return new Computer(ballNumbers);
     }
 
-    static Player Computer(MakeRandomBall makeRandomBall) {
-        return new Computer(makeRandomBall);
+    static Player Computer(BallGenerator ballGenerator) {
+        return new Computer(ballGenerator);
     }
 
     Balls balls();

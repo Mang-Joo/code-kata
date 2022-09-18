@@ -1,8 +1,8 @@
 package io.github.mangjoo.domain.Player;
 
 import io.github.mangjoo.domain.Ball;
+import io.github.mangjoo.domain.BallGenerator;
 import io.github.mangjoo.domain.Balls;
-import io.github.mangjoo.domain.MakeRandomBall;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,8 +15,8 @@ public record Computer(
         this(arrayBallsToListBalls(arrayBallNumbers));
     }
 
-    public Computer(MakeRandomBall makeRandomBall) {
-        this(makeRandomBall.makeRandom());
+    public Computer(BallGenerator ballGenerator) {
+        this(ballGenerator.makeRandom());
     }
 
     private static Balls arrayBallsToListBalls(int[] arrayBallNumbers) {
