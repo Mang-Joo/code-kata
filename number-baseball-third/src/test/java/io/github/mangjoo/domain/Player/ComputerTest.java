@@ -1,7 +1,7 @@
 package io.github.mangjoo.domain.Player;
 
+import io.github.mangjoo.domain.BallGenerator;
 import io.github.mangjoo.domain.Balls;
-import io.github.mangjoo.domain.MakeRandomBall;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -29,10 +29,10 @@ public class ComputerTest {
     @Test
     void 위임_생성_테스트() {
         //given
-        MakeRandomBall makeRandomBall = new MakeRandomBall();
+        BallGenerator ballGenerator = new BallGenerator();
 
         //then
-        assertDoesNotThrow(() -> Player.Computer(makeRandomBall));
+        assertDoesNotThrow(() -> Player.Computer(ballGenerator));
     }
 
     @Test
