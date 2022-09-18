@@ -1,14 +1,14 @@
-package io.github.mangjoo.domain;
+package io.github.mangjoo.domain.Ball;
 
 import java.util.Arrays;
 import java.util.List;
 
 public record Balls(
-        List<Ball> balls
+        BallList balls
 ) {
 
     public Balls {
-        validation(balls);
+        validation(balls.toList());
     }
 
     private void validation(List<Ball> balls) {
@@ -25,11 +25,12 @@ public record Balls(
     }
 
     public Balls(int[] arrayBalls) {
-        this(arrayToList(arrayBalls));
+        this(new ArrayAsBallList(arrayBalls));
+//        this(arrayToList(arrayBalls));
     }
 
     public Balls(String strBalls) {
-        this(stringToList(strBalls));
+        this(new StringAsBallList(strBalls));
     }
 
     private static List<Ball> stringToList(String strBalls) {
