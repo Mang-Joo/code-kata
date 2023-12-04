@@ -3,34 +3,10 @@ package io.github.mangjoo;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class TestObject implements Serializable {
-
-    private String name;
-    private int age;
-
-    public TestObject(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public TestObject() {
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
+public record TestObject(
+        String name,
+        int age
+) implements Serializable {
 
     @Override
     public boolean equals(Object o) {
@@ -44,5 +20,5 @@ public class TestObject implements Serializable {
     public int hashCode() {
         return Objects.hash(name, age);
     }
-
 }
+
